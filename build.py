@@ -1,5 +1,5 @@
 import pandas as pd
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -19,20 +19,29 @@ def draw_plot(titanic):
 
     female_data = titanic['Sex']
     female = female_data[female_data.str.contains('female')].count()
+    male = total - female
 
     proportions = []
-    proportions.append((float(female)/float(total))*100)
-    proportions.append((float(total - female)/float(total))*100)
-    return proportions
+    proportions.append(female)
+    proportions.append(male)
+    #print proportions
 
+    # Data to plot
+    labels = 'male', 'Female'
+    colors = ['gold', 'yellow']
+    explode = (0.1, 0)  # explode 1st slice
 
+    # Plot
+    plt.pie(proportions, explode=explode, labels=labels, colors=colors,
+        autopct='%1.1f%%', shadow=True, startangle=140)
+    plt.axis('equal')
+    plt.show()
 
 def draw_historgram(titanic):
     """
     Enter your code here
     """
     titanic.sort_values("Fare", inplace=True, ascending=False)
-    print titanic.head()
 
 
 titanic = load_data()
