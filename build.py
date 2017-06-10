@@ -36,10 +36,15 @@ def draw_plot(titanic):
 #draw_plot(titanic)
 
 def draw_historgram(titanic):
-    """
-    Enter your code here
-    """
+    b = np.arange(0,700,100)
+    fare = titanic['Fare'].tolist()
+    fare.sort()
+    ax.set_xlabel('Fare')
+    ax.set_ylabel('Frequency')
+    ax.set_title('Fare Paid Histogram')
+    ax.set_ylim(ymax = 350, ymin = 0)
+    ax.hist(fare,bins=b)
 
-
+    plt.show()
 # titanic = load_data()
 # draw_historgram(titanic)
