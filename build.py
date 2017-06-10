@@ -4,16 +4,36 @@ import numpy as np
 
 
 def load_data():
-    """
-    Enter your code here
-    """
+    titanic = pd.read_csv('./files/titanic.csv')
+    #print titanic_csv.head()
+    #return titanic_csv
 
+### all trials
+    #test = titanic_csv['Sex'].value_counts()
+    #print test
+    #proportions = []
+    #test = titanic_csv['Sex'].value_counts()
+    #proportions = pd.Series(test).tolist()
+    #print proportions
+
+load_data()
 
 def draw_plot(titanic):
-    """
-    Enter your code here
-    """
+    proportions = []
+    test = titanic['Sex'].value_counts()
+    proportions = pd.Series(test).tolist()
+    #print proportions
+    labels = 'Males','Females'
+    explode = (0, 0.1)
+    fig, axes = plt.subplots()
+    axes.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%',
+            shadow=True, startangle=90, colors=['b','r'])
+    axes.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+    axes.set_title('Sex_Proportions')
 
+    plt.show()
+
+#draw_plot(titanic)
 
 def draw_historgram(titanic):
     """
