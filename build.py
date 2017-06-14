@@ -19,7 +19,7 @@ def draw_plot(titanic):
     exp = (0.1, 0)
     fig1, ax1 = plt.subplots()
     ax1.pie(list(props), explode=explode, labels=tuple(props.index.tolist()))
-    ax1.axis('equal')  
+    ax1.axis('equal')
     plt.title('Sex Proportion')
     plt.show()
 
@@ -39,5 +39,5 @@ def draw_historgram(titanic):
 
 titanic = load_data()
 print(titanic)
-draw_plot(titanic)
-draw_historgram(titanic)
+# draw_plot(titanic)
+# draw_historgram(titanic)
