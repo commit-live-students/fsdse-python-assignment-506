@@ -27,5 +27,7 @@ def draw_historgram(titanic):
 
 ds = load_data('files/titanic.csv')
 draw_plot(ds)
+
+
 # titanic = load_data()
 # draw_historgram(titanic)
