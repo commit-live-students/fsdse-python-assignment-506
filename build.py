@@ -4,7 +4,7 @@ import numpy as np
 
 
 def load_data():
-    titanic = pd.read_csv('titanic.csv')
+    titanic = pd.read_csv('files/titanic.csv')
     return titanic
 
 def draw_plot(titanic):
